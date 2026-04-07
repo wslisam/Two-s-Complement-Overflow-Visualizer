@@ -204,13 +204,39 @@
             </div>
 
             <div class="bg-purple-50 rounded-xl p-5 sm:p-6 border border-purple-100 text-slate-800 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-purple-900 flex items-center">
+                <h3 class="font-bold text-lg mb-4 text-purple-900 flex items-center border-b border-purple-200 pb-2">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                     <span id="think-title">Think & Link</span>
                 </h3>
-                <p class="text-sm text-purple-800 leading-relaxed" id="think-desc">
-                    If we upgrade a system from 8-bit to 16-bit, how does the representable range change? Think about how data types (like <code>int</code> or <code>short</code> in programming) relate to this concept, and why an unexpected overflow could crash a video game or a financial system!
-                </p>
+                
+                <div class="mb-6">
+                    <ul class="list-disc list-inside space-y-2 text-sm text-purple-900 font-medium">
+                        <li id="think-q1">How does the representable range change when upgrading from an 8-bit to a 16-bit system?</li>
+                        <li id="think-q2">How do programming data types (like <code>int</code> or <code>short</code>) relate to this concept?</li>
+                        <li id="think-q3">Why could an unexpected overflow crash a software system (like a video game or financial app)?</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 border border-purple-100">
+                    <h4 class="font-bold text-purple-800 mb-3 flex items-center text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span id="think-ans-title">Answers:</span>
+                    </h4>
+                    <ul class="space-y-3 text-sm text-purple-800">
+                        <li class="flex items-start">
+                            <span class="mr-2 mt-0.5">•</span>
+                            <span id="think-a1"><strong>Range Change:</strong> It grows exponentially! An 8-bit system holds 256 values (-128 to 127), but a 16-bit system holds 65,536 values (-32,768 to 32,767).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 mt-0.5">•</span>
+                            <span id="think-a2"><strong>Data Types:</strong> Types like <code>short</code> (usually 16-bit) or <code>int</code> (usually 32-bit) are just memory "buckets" of different sizes. Choosing the right bucket prevents data from spilling over.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 mt-0.5">•</span>
+                            <span id="think-a3"><strong>System Crashes:</strong> If a variable exceeding its limit wraps around to a negative number or zero, this sudden, illogical change breaks the program's mathematical logic and causes critical crashes!</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -260,8 +286,16 @@
                 misc1a: "False. That is \"Sign-and-Magnitude\" representation. In Two's Complement, you must invert ALL bits and add 1.",
                 misc2q: "\"Two's complement has a +0 and a -0.\"",
                 misc2a: "False. One of its greatest advantages is having only ONE representation for zero, freeing up memory to store an extra negative number (-128).",
+                
+                // Think & Link translations
                 thinkTitle: "Think & Link",
-                thinkDesc: "If we upgrade a system from 8-bit to 16-bit, how does the representable range change? Think about how data types (like <code>int</code> or <code>short</code> in programming) relate to this concept, and why an unexpected overflow could crash a software system!"
+                thinkQ1: "How does the representable range change when upgrading from an 8-bit to a 16-bit system?",
+                thinkQ2: "How do programming data types (like <code>int</code> or <code>short</code>) relate to this concept?",
+                thinkQ3: "Why could an unexpected overflow crash a software system (like a video game or financial app)?",
+                thinkAnsTitle: "Answers:",
+                thinkA1: "<strong>Range Change:</strong> It grows exponentially! An 8-bit system holds 256 values (-128 to 127), but a 16-bit system holds 65,536 values (-32,768 to 32,767).",
+                thinkA2: "<strong>Data Types:</strong> Types like <code>short</code> (usually 16-bit) or <code>int</code> (usually 32-bit) are just memory \"buckets\" of different sizes. Choosing the right bucket prevents data from spilling over.",
+                thinkA3: "<strong>System Crashes:</strong> If a variable exceeding its limit wraps around to a negative number or zero, this sudden, illogical change breaks the program's mathematical logic and causes critical crashes!"
             },
             zh: {
                 appTitle: "二補碼與溢位視像化",
@@ -299,8 +333,16 @@
                 misc1a: "錯誤。那是「符號與大小 (Sign-and-Magnitude)」表示法。在二補碼中，必須反轉所有位元再加 1。",
                 misc2q: "「二補碼有 +0 和 -0 兩種零。」",
                 misc2a: "錯誤。二補碼最大的優點之一就是只有一個零 (00000000)，省下來的空間讓它可以多存一個負數 (-128)。",
+                
+                // Think & Link translations
                 thinkTitle: "思考與連結",
-                thinkDesc: "如果我們將系統從 8-bit 升級到 16-bit，數值範圍會如何改變？思考一下這與程式設計中的資料型別（如 <code>int</code> 或 <code>short</code>）有何關聯？為什麼未預期的溢位可能會導致電子遊戲或金融系統崩潰？"
+                thinkQ1: "當系統從 8-bit 升級到 16-bit 時，可表示的數值範圍會發生什麼變化？",
+                thinkQ2: "程式設計中的資料型別（例如 <code>int</code> 或 <code>short</code>）與此概念有何關聯？",
+                thinkQ3: "為什麼未預期的溢位（Overflow）可能會導致軟體系統（如電子遊戲或金融系統）崩潰？",
+                thinkAnsTitle: "參考解答：",
+                thinkA1: "<strong>範圍變化：</strong> 呈指數級增長！8-bit 系統只能表示 256 個數值（-128 到 127），而 16-bit 系統可以表示 65,536 個數值（-32,768 到 32,767）。",
+                thinkA2: "<strong>資料型別：</strong> 像 <code>short</code>（通常為 16-bit）或 <code>int</code>（通常為 32-bit）等型別，本質上就是不同容量的記憶體「容器」。選擇合適容量的容器能防止資料裝不下而溢出。",
+                thinkA3: "<strong>系統崩潰：</strong> 如果變數超出限制並循環變成負數或零，這種不合邏輯的突變會破壞程式的數學邏輯與規則，從而導致嚴重的系統崩潰！"
             }
         };
 
@@ -450,7 +492,6 @@
             document.getElementById('concept-twos-title').innerText = t.conceptTwosTitle;
             document.getElementById('concept-twos-desc').innerHTML = t.conceptTwosDesc;
             
-            // New Sign Bit & Overflow concept mappings
             document.getElementById('concept-sign-title').innerText = t.conceptSignTitle;
             document.getElementById('concept-sign-desc').innerHTML = t.conceptSignDesc;
             document.getElementById('concept-overflow-title').innerText = t.conceptOverflowTitle;
@@ -468,8 +509,15 @@
             document.getElementById('misc-2-q').innerText = t.misc2q;
             document.getElementById('misc-2-a').innerText = t.misc2a;
 
+            // Think & Link mappings
             document.getElementById('think-title').innerText = t.thinkTitle;
-            document.getElementById('think-desc').innerHTML = t.thinkDesc;
+            document.getElementById('think-q1').innerHTML = t.thinkQ1;
+            document.getElementById('think-q2').innerHTML = t.thinkQ2;
+            document.getElementById('think-q3').innerHTML = t.thinkQ3;
+            document.getElementById('think-ans-title').innerText = t.thinkAnsTitle;
+            document.getElementById('think-a1').innerHTML = t.thinkA1;
+            document.getElementById('think-a2').innerHTML = t.thinkA2;
+            document.getElementById('think-a3').innerHTML = t.thinkA3;
         }
 
         window.onload = init;
